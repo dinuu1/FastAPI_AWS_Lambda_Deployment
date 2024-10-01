@@ -80,13 +80,13 @@ jobs:
         with:
           name: api
       - name: Upload to S3
-        run: aws s3 cp api.zip s3://fastapisreeni12371823719/api.zip
+        run: aws s3 cp api.zip s3://fastapi12345dineshdev/api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Deploy new Lambda
-        run: aws lambda update-function-code --function-name fastapi --s3-bucket fastapisreeni12371823719 --s3-key api.zip
+        run: aws lambda update-function-code --function-name fastapidev --s3-bucket fastapi12345dineshdev --s3-key api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -109,13 +109,13 @@ jobs:
         with:
           name: api
       - name: Upload to S3
-        run: aws s3 cp api.zip s3://fastapisreeni12371823719qa/api.zip
+        run: aws s3 cp api.zip s3://fastapi12345dineshqa/api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Deploy new Lambda
-        run: aws lambda update-function-code --function-name fastapiqa --s3-bucket fastapisreeni12371823719qa --s3-key api.zip
+        run: aws lambda update-function-code --function-name fastapiqa --s3-bucket fastapi12345dineshqa --s3-key api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -138,13 +138,13 @@ jobs:
         with:
           name: api
       - name: Upload to S3
-        run: aws s3 cp api.zip s3://fastapisreeni12371823719prod/api.zip
+        run: aws s3 cp api.zip s3://fastapi12345dineshprod/api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Deploy new Lambda
-        run: aws lambda update-function-code --function-name fastapiprod --s3-bucket fastapisreeni12371823719prod --s3-key api.zip
+        run: aws lambda update-function-code --function-name fastapiprod --s3-bucket fastapi12345dineshprod --s3-key api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
